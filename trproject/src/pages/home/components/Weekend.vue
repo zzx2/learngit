@@ -1,13 +1,14 @@
 <template>
    <div>
-      <p class="retitle">推荐景点</p>
+      <p class="retitle">周末去哪儿</p>
       <ul>
         <li class="item border-bottom" v-for='item in reList' :key='item.id'>
-          <img class="item-img" :src='item.imgUrl'>
+          <div class="item-img-wapper">
+           <img class="item-img" :src='item.imgUrl'>
+          </div>
           <div class="item-info">
             <p class="item-title">{{item.title}}</p>
             <p class="item-content">{{item.content}}</p>
-            <button class="item-button">查看详情</button>
           </div>
         </li>
       </ul>
@@ -16,27 +17,27 @@
 </template>
 <script>
 export default {
-  name: 'hrecommend',
+  name: 'WeeKend',
   data () {
     return {
       reList: [
         {
           id: '01',
-          imgUrl: 'https://imgs.qunarzz.com/vc/64/f7/d3/a2a358aa1008ff3d16ec328107.jpg_210x140x92.jpg',
+          imgUrl: 'https://imgs.qunarzz.com/vc/33/99/f2/9b8c391353739013629ec85b12.jpg_224x85x92.jpg',
           title: '尊享普吉岛7天5晚',
           content: '3晚精品泰式五星+2晚洲际假日沙滩酒店'
 
         },
         {
           id: '02',
-          imgUrl: 'https://imgs.qunarzz.com/vc/64/f7/d3/a2a358aa1008ff3d16ec328107.jpg_210x140x92.jpg',
+          imgUrl: 'https://imgs.qunarzz.com/vc/33/99/f2/9b8c391353739013629ec85b12.jpg_224x85x92.jpg',
           title: '尊享普吉岛7天5晚',
           content: '3晚精品泰式五星+2晚洲际假日沙滩酒店'
 
         },
         {
           id: '03',
-          imgUrl: 'https://imgs.qunarzz.com/vc/64/f7/d3/a2a358aa1008ff3d16ec328107.jpg_210x140x92.jpg',
+          imgUrl: 'https://imgs.qunarzz.com/vc/33/99/f2/9b8c391353739013629ec85b12.jpg_224x85x92.jpg',
           title: '尊享普吉岛7天5晚',
           content: '3晚精品泰式五星+2晚洲际假日沙滩酒店'
 
@@ -49,37 +50,27 @@ export default {
 </script>
 <style lang='stylus' scoped>
 @import '~styles/mixin.styl';
-  .retitle
+   .retitle
      margin-top :.2rem
      line-height :.8rem
      background :#eeee
      text-indent:.2rem
-  .item
-       display :flex
+   .item-img-wapper
        overflow :hidden
-       height :1.9rem
+       height :0
+       padding-bottom :33.4%
        .item-img
-         height :1.7rem
-         width :1.7rem
-         padding:.1rem
-       .item-info
-          flex :1
-          padding :.1rem
-          min-width :0
-          .item-title
+         width :100%
+    .item-info
+        padding :.1rem
+        min-width :0
+        .item-title
             line-height :.54rem
             font-size :.32rem
             ellips()
-          .item-content
+        .item-content
              line-height :.4rem
              color :#cccc
              ellips()
-          .item-button
-             line-height :.44rem
-             margin-top :.16rem
-             background :#ff9300
-             padding :0 0.1rem
-             border-radius :.06rem
-             color:#ffffff
 
 </style>

@@ -3,21 +3,24 @@
         <Header />
         <Homeswper />
         <Icons />
-        <Hrecommend />
+        <hrecommend />
+        <weekend />
     </div>
 </template>
 <script>
 import Header from './components/header'
 import Homeswper from './components/Homeswper'
 import Icons from './components/Icons'
-import Hrecommend from './components/Hrecommend'
+import hrecommend from './components/hrecommend'
+import weekend from './components/Weekend'
 export default {
   name: 'home',
   components: {
     Header,
     Homeswper,
     Icons,
-    Hrecommend
+    hrecommend,
+    weekend
   }
 }
 </script>
