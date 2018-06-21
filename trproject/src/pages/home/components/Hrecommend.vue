@@ -6,7 +6,7 @@
           <img class="item-img" :src='item.imgUrl'>
           <div class="item-info">
             <p class="item-title">{{item.title}}</p>
-            <p class="item-content">{{item.content}}</p>
+            <p class="item-content">{{item.desc}}</p>
             <button class="item-button">查看详情</button>
           </div>
         </li>
@@ -17,31 +17,11 @@
 <script>
 export default {
   name: 'hrecommend',
+  props: {
+    reList: Array
+  },
   data () {
     return {
-      reList: [
-        {
-          id: '01',
-          imgUrl: 'https://imgs.qunarzz.com/vc/64/f7/d3/a2a358aa1008ff3d16ec328107.jpg_210x140x92.jpg',
-          title: '尊享普吉岛7天5晚',
-          content: '3晚精品泰式五星+2晚洲际假日沙滩酒店'
-
-        },
-        {
-          id: '02',
-          imgUrl: 'https://imgs.qunarzz.com/vc/64/f7/d3/a2a358aa1008ff3d16ec328107.jpg_210x140x92.jpg',
-          title: '尊享普吉岛7天5晚',
-          content: '3晚精品泰式五星+2晚洲际假日沙滩酒店'
-
-        },
-        {
-          id: '03',
-          imgUrl: 'https://imgs.qunarzz.com/vc/64/f7/d3/a2a358aa1008ff3d16ec328107.jpg_210x140x92.jpg',
-          title: '尊享普吉岛7天5晚',
-          content: '3晚精品泰式五星+2晚洲际假日沙滩酒店'
-
-        }
-      ]
     }
   }
 

@@ -6,7 +6,7 @@
           <div class="icon-img">
              <img class="icon-img-content" :src="item.imgUrl">
           </div>
-          <p class="icon-font">{{item.icontent}}</p>
+          <p class="icon-font">{{item.desc}}</p>
       </div>
     </swiper-slide>
    </swiper>
@@ -16,64 +16,20 @@
 <script>
 export default {
   name: 'Icons',
+  props: {
+    icon: Array
+  },
   data () {
     return {
       swiperOption: {
-        autoplayDisableOnInteraction: false
-      },
-      IconsList: [
-        {
-          id: '001',
-          imgUrl: 'https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3537084900,3800051897&fm=58',
-          icontent: '电玩游戏'
-        },
-        {
-          id: '002',
-          imgUrl: 'https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3537084900,3800051897&fm=58',
-          icontent: '电玩游戏'
-        },
-        {
-          id: '003',
-          imgUrl: 'https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3537084900,3800051897&fm=58',
-          icontent: '电玩游戏'
-        },
-        {
-          id: '004',
-          imgUrl: 'https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3537084900,3800051897&fm=58',
-          icontent: '电玩游戏'
-        },
-        {
-          id: '005',
-          imgUrl: 'https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3537084900,3800051897&fm=58',
-          icontent: '电玩游戏'
-        },
-        {
-          id: '006',
-          imgUrl: 'https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3537084900,3800051897&fm=58',
-          icontent: '电玩游戏'
-        },
-        {
-          id: '007',
-          imgUrl: 'https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3537084900,3800051897&fm=58',
-          icontent: '电玩游戏'
-        },
-        {
-          id: '008',
-          imgUrl: 'https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3537084900,3800051897&fm=58',
-          icontent: '电玩游戏'
-        },
-        {
-          id: '009',
-          imgUrl: 'https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3537084900,3800051897&fm=58',
-          icontent: '电玩游戏'
-        }
-      ]
+        autoplay: false
+      }
     }
   },
   computed: {
     pages: function () {
       const pages = []
-      this.IconsList.forEach((item, index) => {
+      this.icon.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []

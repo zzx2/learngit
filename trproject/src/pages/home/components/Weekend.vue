@@ -2,13 +2,13 @@
    <div>
       <p class="retitle">周末去哪儿</p>
       <ul>
-        <li class="item border-bottom" v-for='item in reList' :key='item.id'>
+        <li class="item border-bottom" v-for='item in weList' :key='item.id'>
           <div class="item-img-wapper">
            <img class="item-img" :src='item.imgUrl'>
           </div>
           <div class="item-info">
             <p class="item-title">{{item.title}}</p>
-            <p class="item-content">{{item.content}}</p>
+            <p class="item-content">{{item.desc}}</p>
           </div>
         </li>
       </ul>
@@ -17,32 +17,12 @@
 </template>
 <script>
 export default {
+  props: {
+    weList: Array
+  },
   name: 'WeeKend',
   data () {
     return {
-      reList: [
-        {
-          id: '01',
-          imgUrl: 'https://imgs.qunarzz.com/vc/33/99/f2/9b8c391353739013629ec85b12.jpg_224x85x92.jpg',
-          title: '尊享普吉岛7天5晚',
-          content: '3晚精品泰式五星+2晚洲际假日沙滩酒店'
-
-        },
-        {
-          id: '02',
-          imgUrl: 'https://imgs.qunarzz.com/vc/33/99/f2/9b8c391353739013629ec85b12.jpg_224x85x92.jpg',
-          title: '尊享普吉岛7天5晚',
-          content: '3晚精品泰式五星+2晚洲际假日沙滩酒店'
-
-        },
-        {
-          id: '03',
-          imgUrl: 'https://imgs.qunarzz.com/vc/33/99/f2/9b8c391353739013629ec85b12.jpg_224x85x92.jpg',
-          title: '尊享普吉岛7天5晚',
-          content: '3晚精品泰式五星+2晚洲际假日沙滩酒店'
-
-        }
-      ]
     }
   }
 
